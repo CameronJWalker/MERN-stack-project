@@ -8,12 +8,14 @@ import Home from './components/Home.jsx';
 export default function App() {
      return (
       <>
+      <style>
+      @import url('https://fonts.googleapis.com/css2?family=Emblema+One&family=Exo+2:wght@500&display=swap');
+      </style>
+  
        <div className="App">
-          <header className="App-header">
-            <nav>
+            <nav className = 'navbar'>
               Workout App
             </nav>
-          </header>
         </div>
       <Routes>
         <Route path = "/" element = {<Home/>}/>
