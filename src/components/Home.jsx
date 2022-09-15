@@ -8,5 +8,6 @@ export default function Home() {
           <a href = '/nutrition'><button> New Nutrition </button></a>
           <a href = '/prlog'><button> New Personal Record </button></a>
         </div>
+        
     )
     }
