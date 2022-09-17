@@ -1,21 +1,14 @@
 const express = require("express");
-const app = express();
-const morgan = require("morgan");
-const client = require("./modules/db");
-const MongoClient = require('mongodb').MongoClient
-const url = 'mongodb://127.0.0.1:27017'
+const mongoose = require('mongoose')
+const url = 'mongodb://127.0.0.1:27017/WorkoutApp'
 
-// Middleware
-app.use(express.json());
-app.use(morgan('dev'));
+mongoose.connect(url, { useNewUrlParser: true })
 
-const dbName = 'WorkoutApp'
-MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
-    if (err) return console.log(err)
-  
-    // Storing a reference to the database so you can use it later
-    db = client.db(dbName)
-    console.log(`Connected MongoDB: ${url}`)
-    console.log(`Database: ${dbName}`)
-  })
-let db
+const db = mongoose.connection
+db.once('open', _ => {
+  console.log('Database connected:', url)
+})
+
+db.on('error', err => {
+  console.error('connection error:', err)
+})
