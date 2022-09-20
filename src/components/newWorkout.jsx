@@ -76,7 +76,7 @@ import ReactDOM from 'react-dom/client';
                      onChange={handleChange}
                  />
              </label>
-         <input type="submit" />
+         <input class = "submitButton" type="submit" />
      </form>
      </div>
      );

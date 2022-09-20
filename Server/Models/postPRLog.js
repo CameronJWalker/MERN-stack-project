@@ -8,4 +8,4 @@ const postSchema = mongoose.Schema({
 
 const postPRLog = mongoose.model('PostPRLog', postSchema)
 
-export default postPRLog;6
+export default postPRLog;

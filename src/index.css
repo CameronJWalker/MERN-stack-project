@@ -53,40 +53,54 @@
     margin: 0 auto;
     text-align: center;
     padding-top: 20vh;
+    display: block;
+    text-align: left;
 }
 .newWorkout label.workoutName {
     display: block;
     text-align: left;
+    margin: 2vh;
 }
 .newWorkout label.cOs {
     display: block;
     text-align: left;
+    margin: 2vh;
 
 }
 .newWorkout label.numberOfSets {
     display: block;
     text-align: left;
+    margin: 2vh;
 
 }
 .newWorkout label.numberOfReps {
     display: block;
     text-align: left;
+    margin: 2vh;
 
 }
 .newWorkout label.weight {
     display: block;
     text-align: left;
+    margin: 2vh;
 
 }
 .newWorkout label.workoutDuration {
     display: block;
     text-align: left;
+    margin: 2vh;
 
 }
 .newWorkout label.caloriesBurned {
     display: block;
     text-align: left;
+    margin: 2vh;
 
+}
+.newWorkout input.submitButton {
+    display: block;
+    text-align: left;
+    margin: 2vh;
 }
 /* New Nutrition Form   */
 .newNutrition {
