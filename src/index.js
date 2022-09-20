@@ -5,7 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+//starting adding info from here
+import { Provider } from 'react-redux'
+import {createStore, applyMiddleware, compose} from 'redux'
+import thunk from 'redux-thunk';
+
+import reducers from './reducers'
+import App from '/.App'
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)))
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+//end of Austi Adding Info
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
