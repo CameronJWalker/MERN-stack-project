@@ -1,4 +1,6 @@
 const express = require("express");
+const app = express();
+const cors = require("corse");
 const mongoose = require('mongoose')
 const url = 'mongodb://127.0.0.1:27017/WorkoutApp'
 
