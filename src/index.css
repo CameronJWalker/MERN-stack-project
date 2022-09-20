@@ -47,3 +47,57 @@
     font-size: larger;
     font-family: 'Exo 2', sans-serif;
 }
+/* New Workout Form */
+.newWorkout {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.newWorkout label.workoutName {
+    display: block;
+    text-align: left;
+
+}
+.newWorkout label.cOs {
+    display: block;
+    text-align: left;
+
+}
+.newWorkout label.numberOfSets {
+    display: block;
+    text-align: left;
+
+}
+.newWorkout label.numberOfReps {
+    display: block;
+    text-align: left;
+
+}
+.newWorkout label.weight {
+    display: block;
+    text-align: left;
+
+}
+.newWorkout label.workoutDuration {
+    display: block;
+    text-align: left;
+
+}
+.newWorkout label.caloriesBurned {
+    display: block;
+    text-align: left;
+
+}
+/* New Nutrition Form   */
+.newNutrition {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+/* New PR Form */
+.newPR {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+

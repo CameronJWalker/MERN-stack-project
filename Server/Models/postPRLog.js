@@ -6,6 +6,6 @@ const postSchema = mongoose.Schema({
     weight: String,
 });
 
-const PostPRLog = mongoose.model('PostPRLog', postSchema)
+const postPRLog = mongoose.model('PostPRLog', postSchema)
 
-export default PostPRLog;
+export default postPRLog;6

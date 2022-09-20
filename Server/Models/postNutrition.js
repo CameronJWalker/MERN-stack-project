@@ -9,6 +9,6 @@ const postSchema = mongoose.Schema({
         protein: String,
 });
 
-const PostNutrition = mongoose.model('PostNutrition', postSchema)
+const postNutrition = mongoose.model('PostNutrition', postSchema)
 
-export default PostNutrition;
+export default postNutrition;

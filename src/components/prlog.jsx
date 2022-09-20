@@ -16,6 +16,7 @@ export default function PRLog() {
                  alert(inputs);
                 }
     return(
+        <div className = "newPR">
         <form onSubmit={handleSubmit}>
         <label>Enter Workout Name:
             <input 
@@ -35,6 +36,7 @@ export default function PRLog() {
           </label>
           <input type="submit" />
       </form>
+      </div>
     )
   }
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -11,6 +11,6 @@ const postSchema = mongoose.Schema({
         burned: String,
 });
 
-const PostNewWorkout = mongoose.model('PostNewWorkout', postSchema)
+const postNewWorkout = mongoose.model('PostNewWorkout', postSchema)
 
-export default PostNewWorkout;
+export default postNewWorkout;

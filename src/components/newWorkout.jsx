@@ -18,8 +18,9 @@ import ReactDOM from 'react-dom/client';
        }
 
      return (
+        <div className = "newWorkout">
          <form onSubmit={handleSubmit}>
-             <label>Enter your Workout Name
+             <label class ="workoutName">Enter your Workout Name
                  <input 
                      type="text" 
                      name="workoutname" 
@@ -27,7 +28,7 @@ import ReactDOM from 'react-dom/client';
                      onChange={handleChange}
                 />
             </label>
-            <label> Cardio or Strength
+            <label class = "cOs"> Cardio or Strength
                 <input 
                     type="text" 
                     name="cOs" 
@@ -35,7 +36,7 @@ import ReactDOM from 'react-dom/client';
                     onChange={handleChange}
                 />
             </label>
-            <label># of Sets
+            <label class = "numberOfSets"># of Sets
                 <input 
                     type="number" 
                     name="sets" 
@@ -43,7 +44,7 @@ import ReactDOM from 'react-dom/client';
                     onChange={handleChange}
                 />
             </label>
-            <label># of Reps
+            <label class = "numberOfReps"># of Reps
                 <input 
                     type="number" 
                     name="reps" 
@@ -51,7 +52,7 @@ import ReactDOM from 'react-dom/client';
                     onChange={handleChange}
                 />
             </label>
-            <label> Weight
+            <label class = "weight"> Weight
                 <input 
                     type="number" 
                     name="weight" 
@@ -59,7 +60,7 @@ import ReactDOM from 'react-dom/client';
                     onChange={handleChange}
                 />
             </label>
-            <label> Workout Duration
+            <label class = "workoutDuration"> Workout Duration
                 <input 
                     type="number" 
                     name="duration" 
@@ -67,7 +68,7 @@ import ReactDOM from 'react-dom/client';
                      onChange={handleChange}
                  />
              </label>
-             <label> Est. Calories Burned
+             <label class = "caloriesBurned"> Est. Calories Burned
                  <input 
                      type="number" 
                      name="burned" 
@@ -77,6 +78,7 @@ import ReactDOM from 'react-dom/client';
              </label>
          <input type="submit" />
      </form>
+     </div>
      );
  }
  //dont understand this part entirely

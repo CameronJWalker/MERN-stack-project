@@ -17,6 +17,7 @@ export default function Nutrition() {
           }
    
         return (
+            <div className = "newNutrition">
             <form onSubmit={handleSubmit}>
                 <label>Enter your Meal
                     <input 
@@ -68,6 +69,7 @@ export default function Nutrition() {
                </label>
             <input type="submit" />
         </form>
+        </div>
         );
     }
     //dont understand this part entirely
