@@ -2,7 +2,7 @@ import PostNewWorkout from "../Models/postNewWorkout";
 
 export const getPost = async (req, res) => {
     try {
-        const postnewWorkouts  = await  postNewWorkout.find();
+        const postnewWorkouts  = await PostNewWorkout.find();
 
         res.status(200).json(postnewWorkouts);
     } catch (error) {

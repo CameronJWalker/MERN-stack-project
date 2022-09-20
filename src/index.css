@@ -52,11 +52,11 @@
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
+    padding-top: 20vh;
 }
 .newWorkout label.workoutName {
     display: block;
     text-align: left;
-
 }
 .newWorkout label.cOs {
     display: block;
