@@ -1,10 +1,44 @@
-const PostNewWorkout = require("../Models/postNewWorkout")
+const PostNewWorkout = require ("../Modules/postNewWorkout");
 const express = require("express");
-const WorkoutRouter = express.Router();
+const NewWorkoutRouter = express.Router();
 
-WorkoutRouter.post("/newWorkout/:WorkoutId", (req, res, next) => {
 
+NewWorkoutRouter.post("/", (req, res, next) => {
+    const newNewWorkout = new PostNewWorkout(req.body)
+    newNewWorkout.save((err, savedWorkout) => {
+        if(err){
+          res.status(500)
+        }
+        return res.status(201).send(savedWorkout)
+      })
+    
 })
+NewWorkoutRouter.get("/", (req, res, next) => {
+    PostNewWorkout.find((err, savedWorkout) => {
+        if(err){
+          res.status(500)
+          return next(err)
+        }
+        return res.status(200).send(savedWorkout)
+      })
+})
+// PRLogRouter.put(() => {
+
+// })
+NewWorkoutRouter.delete("/:NewWorkoutId",(req, res, next) => {
+  PostNewWorkout.findOneAndDelete(
+    {_id:req.params.NewWorkoutId},
+    (err, deletedWorkout) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(`Successfully deleted the workout Log: ${deletedWorkout}`)
+    }
+  )
+})
+
+module.exports = NewWorkoutRouter;
 
 // export const getPost = async (req, res) => {
 //     try {

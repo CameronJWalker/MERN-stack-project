@@ -3,7 +3,7 @@ const express = require("express");
 const PRLogRouter = express.Router();
 
 
-PRLogRouter.post("/prlog", (req, res, next) => {
+PRLogRouter.post("/", (req, res, next) => {
     const newPRLog = new PostPRLog(req.body)
     newPRLog.save((err, savedPRLog) => {
         if(err){
@@ -13,7 +13,7 @@ PRLogRouter.post("/prlog", (req, res, next) => {
       })
     
 })
-PRLogRouter.get("/prlog", (req, res, next) => {
+PRLogRouter.get("/", (req, res, next) => {
     PostPRLog.find((err, savedPRLog) => {
         if(err){
           res.status(500)
@@ -21,6 +21,21 @@ PRLogRouter.get("/prlog", (req, res, next) => {
         }
         return res.status(200).send(savedPRLog)
       })
+})
+// PRLogRouter.put(() => {
+
+// })
+PRLogRouter.delete("/:PRLogId",(req, res, next) => {
+  PostPRLog.findOneAndDelete(
+    {_id:req.params.PRLogId},
+    (err, deletedPRLog) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(`Successfully deleted the PR Log: ${deletedPRLog}`)
+    }
+  )
 })
 
 module.exports = PRLogRouter;

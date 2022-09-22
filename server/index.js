@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const PRLogRouter = require('../Routes/PRLogPosts');
+const NewWorkoutRouter = require('../Routes/newWorkoutPosts');
+const NutritionRouter = require('../Routes/nutritionPosts');
 
 // Middleware
 app.use(express.json());
@@ -23,7 +25,9 @@ async function main(){
 };
 
 // Route
-app.use('/', PRLogRouter)
+app.use('/prlog', PRLogRouter)
+app.use('/newworkout', NewWorkoutRouter)
+app.use('/nutrition', NutritionRouter)
 
 // Error Handler
   app.use((err, req, res, next) => {

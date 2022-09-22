@@ -1,10 +1,44 @@
-const PostNutrition = require ("../Models/postNutrition");
+const postNutrition = require ("../Modules/postNutrition");
 const express = require("express");
 const NutritionRouter = express.Router();
 
-NutritionRouter.post("/nutrition/:NutritionId", (req, res, next) => {
 
+NutritionRouter.post("/", (req, res, next) => {
+    const newNutrition = new postNutrition(req.body)
+    newNutrition.save((err, savedNutrition) => {
+        if(err){
+          res.status(500)
+        }
+        return res.status(201).send(savedNutrition)
+      })
+    
 })
+NutritionRouter.get("/", (req, res, next) => {
+    postNutrition.find((err, savedNutrition) => {
+        if(err){
+          res.status(500)
+          return next(err)
+        }
+        return res.status(200).send(savedNutrition)
+      })
+})
+// NutritionRouter.put(() => {
+
+// })
+NutritionRouter.delete("/:NutritionId",(req, res, next) => {
+  postNutrition.findOneAndDelete(
+    {_id:req.params.NutritionId},
+    (err, deletedNutrition) => {
+      if(err){
+        res.status(500)
+        return next(err)
+      }
+      return res.status(200).send(`Successfully deleted the nutrition Log: ${deletedNutrition}`)
+    }
+  )
+})
+
+module.exports = NutritionRouter;
 
 // export const getPost = async (req, res) => {
 //     try {
