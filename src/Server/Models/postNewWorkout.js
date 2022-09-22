@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
+import { Schema } from 'mongoose';
 
-const postSchema = mongoose.Schema({
+const postSchema = new Schema({
 
         workoutname: String,
         cOs: String,
@@ -11,6 +12,5 @@ const postSchema = mongoose.Schema({
         burned: String,
 });
 
-const postNewWorkout = mongoose.model('PostNewWorkout', postSchema)
+module.exports = mongoose.model('PostNewWorkout', postSchema)
 
-export default postNewWorkout;

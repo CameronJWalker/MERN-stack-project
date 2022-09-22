@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
+import { Schema } from 'mongoose';
 
-const postSchema = mongoose.Schema({
+const postSchema = new Schema({
         mealname: String,
         servsize: String,
         cal: String,
@@ -9,6 +10,5 @@ const postSchema = mongoose.Schema({
         protein: String,
 });
 
-const postNutrition = mongoose.model('PostNutrition', postSchema)
+module.exports = mongoose.model('PostNutrition', postSchema)
 
-export default postNutrition;
