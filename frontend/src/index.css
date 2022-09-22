@@ -1,0 +1,116 @@
+* {
+  background-color: #EBE8E0; 
+  margin: 0;
+  padding: 0;
+}
+/* Navbar in App.jsx */
+.navbar {
+  color: #D01110;
+  display: flex;
+  background-color: #0A0A00; 
+  height: 6vh;
+  font-family: 'Emblema One', cursive;
+  font-size: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3vh;
+}
+/* button container in Home.jsx */
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+}
+.button-container a {
+  text-decoration: none;
+}
+
+.button-container a button {
+  background-color:#0A0A00; 
+  color:#D01110;
+  border: none;
+  padding: 2vh;
+  border-radius: 15px;
+  padding: 4vh;
+  font-size: larger;
+  font-family: 'Exo 2', sans-serif;
+  box-shadow: 2px 6px 6px #A8BBB0;
+}
+.button-container a button:hover {
+  background-color:#D01110; 
+  color:#0A0A00;
+  border: none;
+  padding: 2vh;
+  border-radius: 15px;
+  padding: 4vh;
+  font-size: larger;
+  font-family: 'Exo 2', sans-serif;
+}
+/* New Workout Form */
+.newWorkout {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20vh;
+  display: block;
+  text-align: left;
+}
+.newWorkout label.workoutName {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+}
+.newWorkout label.cOs {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+
+}
+.newWorkout label.numberOfSets {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+
+}
+.newWorkout label.numberOfReps {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+
+}
+.newWorkout label.weight {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+
+}
+.newWorkout label.workoutDuration {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+
+}
+.newWorkout label.caloriesBurned {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+
+}
+.newWorkout input.submitButton {
+  display: block;
+  text-align: left;
+  margin: 2vh;
+}
+/* New Nutrition Form   */
+.newNutrition {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* New PR Form */
+.newPR {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
