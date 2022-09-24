@@ -5,7 +5,7 @@ export default function PRLog() {
   const initInputs = {
     workoutName: "",
     weight: ""
-}
+  }
   const [inputs, setInputs] = useState(initInputs);
 
   function handleChange(e){

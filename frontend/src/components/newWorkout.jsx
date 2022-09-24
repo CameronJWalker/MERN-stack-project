@@ -129,7 +129,7 @@ export default function NewWorkout() {
               <span className="details">Est. Calories Burned </span>
                     <input
                         type="number"
-                        placeholder="Enter (e+calories)" 
+                        placeholder="Enter (e+calories burned)" 
                         name="burned"
                         value={burned}
                         onChange={handleChange}
