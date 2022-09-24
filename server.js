@@ -15,7 +15,7 @@ app.use(express.json());
 // app.use(morgan('dev'));
 app.use(cors());
 
-app.use(express.static(path.resolve(__dirname, '../frontend/build')));
+app.use(express.static(path.resolve(__dirname, './frontend/build')));
 
 main().catch(err => console.log(err));
 async function main(){
@@ -40,7 +40,7 @@ app.use('/nutrition', NutritionRouter)
    return res.status(400).send({ errMsg: err.message})
 });
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './frontend/build', 'index.html'));
 });
 app.listen(process.env.PORT || 3001, () => {
     console.log("The App is running at port 3001")
