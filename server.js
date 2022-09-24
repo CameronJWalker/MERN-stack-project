@@ -7,17 +7,19 @@ const cors = require("cors");
 const PRLogRouter = require('./Routes/PRLogPosts');
 const NewWorkoutRouter = require('./Routes/newWorkoutPosts');
 const NutritionRouter = require('./Routes/nutritionPosts');
-
-
+const path = require("path");
+require("dotenv").config();
 
 // Middleware
 app.use(express.json());
 // app.use(morgan('dev'));
 app.use(cors());
 
+app.use(express.static(path.resolve(__dirname, '../frontend/build')));
+
 main().catch(err => console.log(err));
 async function main(){
-    await mongoose.connect('mongodb://localhost:27017/WorkoutApp'),
+    await mongoose.connect(process.env.dburi),
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -37,7 +39,10 @@ app.use('/nutrition', NutritionRouter)
   console.log(err)
    return res.status(400).send({ errMsg: err.message})
 });
-app.listen(3001, () => {
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../frontend/build', 'index.html'));
+});
+app.listen(process.env.PORT || 3001, () => {
     console.log("The App is running at port 3001")
 });
 
