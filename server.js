@@ -4,11 +4,10 @@ const express = require("express");
 const app = express();
 require('dotenv').config();
 const cors = require("cors");
-const NewAuthRouter = require('../Routes/authRoute')
-const PRLogRouter = require('../Routes/PRLogPosts');
-const NewWorkoutRouter = require('../Routes/newWorkoutPosts');
-const NutritionRouter = require('../Routes/nutritionPosts');
-const { expressjwt: jwt } = require('express-jwt');
+const PRLogRouter = require('./Routes/PRLogPosts');
+const NewWorkoutRouter = require('./Routes/newWorkoutPosts');
+const NutritionRouter = require('./Routes/nutritionPosts');
+
 
 
 // Middleware
@@ -29,7 +28,6 @@ async function main(){
 };
 
 // Route
-app.use('/auth', NewAuthRouter)
 app.use('/prlog', PRLogRouter)
 app.use('/newworkout', NewWorkoutRouter)
 app.use('/nutrition', NutritionRouter)

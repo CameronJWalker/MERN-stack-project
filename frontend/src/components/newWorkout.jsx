@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 // import postNewWorkout from '../Server/Models/postNewWorkout';
 
 export default function NewWorkout() {
-    const [inputs, setInputs] = useState({});
+    const initInputs = {
+        workoutname: "",
+        cOs: "",
+        sets: "",
+        reps: "",
+        weight: "",
+        duration: "",
+        burned: ""
+    }
+    const [inputs, setInputs] = useState(initInputs);
 
     function handleChange(e){
         const {name, value} = e.target
@@ -14,63 +24,67 @@ export default function NewWorkout() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(inputs);
+        axios.post("/newworkout", inputs)
+            .then(res => {
+                return res.data
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+        setInputs(initInputs)
     }
 
+    const {workoutname, cOs, sets, reps, weight, duration, burned} = inputs
     return (
-        <div className = "newWorkout">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="newWorkout">
                 <label class ="workoutName">Enter your Workout Name
                     <input 
                         type="text" 
                         name="workoutname" 
-                        value={inputs.workoutname || ""} 
+                        value={workoutname} 
                         onChange={handleChange}/>
                 </label>
                 <label class = "cOs"> Cardio or Strength
                     <input 
                         type="text" 
                         name="cOs" 
-                        value={inputs.cOs || ""} 
+                        value={cOs} 
                         onChange={handleChange}/>
                 </label>
                 <label class = "numberOfSets"># of Sets
                     <input 
                         type="number" 
                         name="sets" 
-                        value={inputs.sets || ""} 
+                        value={sets} 
                         onChange={handleChange}/>
                 </label>
                 <label class = "numberOfReps"># of Reps
                     <input 
                         type="number" 
                         name="reps" 
-                        value={inputs.reps || ""} 
+                        value={reps} 
                         onChange={handleChange}/>
                 </label>
                 <label class = "weight"> Weight
                     <input 
                         type="number" 
                         name="weight" 
-                        value={inputs.weight || ""} 
+                        value={weight} 
                         onChange={handleChange}/>
                 </label>
                 <label class = "workoutDuration"> Workout Duration
                     <input 
                         type="number" 
                         name="duration" 
-                        value={inputs.duration || ""} 
+                        value={duration} 
                         onChange={handleChange}/>
                 </label>
                 <label class = "caloriesBurned"> Est. Calories Burned
                     <input 
                         type="number" 
                         name="burned" 
-                        value={inputs.burned || ""} 
+                        value={burned} 
                         onChange={handleChange}/>
                 </label>
-                <input class = "submitButton" type="submit" />
+                <button>Submit</button>
             </form>
-        </div>
     );
 }

@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 export default function PRLog() {
-  const [inputs, setInputs] = useState({});
+  const initInputs = {
+    workoutName: "",
+    weight: ""
+}
+  const [inputs, setInputs] = useState(initInputs);
 
   function handleChange(e){
     const {name, value} = e.target
@@ -13,28 +18,32 @@ export default function PRLog() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(inputs);
+    axios.post("/prlog", inputs)
+            .then(res => {
+                return res.data
+            })
+            .catch(err => console.log(err.response.data.errMsg))
+    setInputs(initInputs)
   }
 
+  const {workoutName, weight} = inputs
   return(
-    <div className = "newPR">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className = "newPR">
         <label>Enter Workout Name:
           <input 
             type="text" 
             name="workoutName" 
-            value={inputs.workoutName || ""} 
+            value={workoutName} 
             onChange={handleChange}/>
         </label>
         <label>Enter your PR Weight:
           <input 
             type="number" 
             name="weight" 
-            value={inputs.weight || ""} 
+            value={weight} 
             onChange={handleChange}/>
           </label>
-        <input type="submit" />
+          <button>Submit</button>
       </form>
-    </div>
   )
 }
