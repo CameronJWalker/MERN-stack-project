@@ -15,7 +15,6 @@ export default function App() {
        <div className="App">
             <nav className = 'navbar'>
               Workout App
-              <a href = '/signin'><button>Log In</button></a>
             </nav>
         </div>
       <Routes>
@@ -23,7 +22,6 @@ export default function App() {
         <Route path = "/newworkout" element = {<NewWorkout/>}/>
         <Route path = "/nutrition" element = {<Nutrition/>}/>
         <Route path = "/prlog" element = {<PRLog/>}/>
-
       </Routes>
       </>
   );
