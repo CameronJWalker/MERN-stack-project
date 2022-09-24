@@ -28,22 +28,46 @@ export default function PRLog() {
 
   const {workoutName, weight} = inputs
   return(
-      <form onSubmit={handleSubmit} className = "newPR">
-        <label>Enter Workout Name:
-          <input 
-            type="text" 
-            name="workoutName" 
-            value={workoutName} 
-            onChange={handleChange}/>
-        </label>
-        <label>Enter your PR Weight:
-          <input 
-            type="number" 
-            name="weight" 
-            value={weight} 
-            onChange={handleChange}/>
-          </label>
-          <button>Submit</button>
-      </form>
+    <div className="container">
+      <h1>The Workout App</h1>
+      <div className="title"> 
+        <h2>Personal Records</h2>
+        <h6> Enter Personal Records Below </h6>
+        <div className="logo">
+          <img src="2logo.png" alt="TheWorkoutApp" className='two'/>
+        </div>
+        <form action="#" onSubmit={handleSubmit}>
+          <div className="topic-details">
+            <div className="input-wrap">
+              <span className= "details">Workout Name</span>
+                <input
+                  type="text"
+                  placeholder=" Enter Workout Name"
+                  name="workoutName"   
+                  className="input-field"
+                  value={workoutName} 
+                  autocomplete="off"
+                  onChange={handleChange}
+                  required/>
+            </div>
+            <div className="input-wrap">
+              <span className="details">PR Weight</span>
+                  <input
+                    type="number" 
+                    placeholder="Enter PR weight"
+                    name="weight" 
+                    className="input-field" 
+                    autocomplete="off"
+                    value={weight}
+                    onChange={handleChange}
+                    required/>
+            </div>
+            <div className="button">
+              <input type="submit" value="Submit New Workout"className="sign-btn" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   )
 }

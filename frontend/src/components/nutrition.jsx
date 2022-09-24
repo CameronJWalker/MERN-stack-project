@@ -33,56 +33,93 @@ export default function Nutrition() {
    
     const {mealname, servsize, cal, fat, carbs, protein} = inputs
     return (
-            <form onSubmit={handleSubmit} className = "newNutrition">
-                <label>Enter your Meal
-                    <input 
-                        type="text" 
-                        name="mealname" 
-                        value={mealname} 
-                        onChange={handleChange}
-                   />
-               </label>
-               <label> Serving Size
-                    <input 
-                        type="number" 
-                        name="servsize" 
-                        value={servsize} 
-                        onChange={handleChange}
-                    />
-                </label>
-                <label> Calories
-                   <input 
-                       type="number" 
-                       name="cal" 
-                       value={cal} 
-                       onChange={handleChange}
-                   />
-                </label>
-                <label> Fat(g)
-                   <input 
-                       type="number" 
-                       name="fat" 
-                       value={fat} 
-                       onChange={handleChange}
-                   />
-                </label>
-                <label>Carbs(g)
-                   <input 
-                       type="number" 
-                       name="carbs" 
-                       value={carbs} 
-                       onChange={handleChange}
-                   />
-                </label>
-                <label> Protein(g)
-                   <input 
-                       type="number" 
-                       name="protein" 
-                       value={protein} 
-                       onChange={handleChange}
-                   />
-                </label>
-                <button>Submit</button>
+        <div className="container">
+            <div className="title">
+                <h2>Nutrition</h2>
+                <h6> Enter Nutritional Details Below</h6>
+                <div className="logo">
+                    <img src="2logo.png" alt="TheWorkoutApp" className='three'/>
+                </div>
+            </div>
+            <form action="#" onSubmit={handleSubmit}>
+                <div className="topic-details">
+                    <div className="input-wrap">
+                        <span className= "details">Food Name</span>
+                        <input
+                            type="text"
+                            placeholder=" Enter Food Name"
+                            name="mealname"   
+                            className="input-field" 
+                            autoComplete="off"
+                            value={mealname}
+                            onChange={handleChange}
+                            required/>
+                    </div>
+                    <div className="input-wrap">
+                        <span className="details">Serving Size</span>
+                        <input
+                            type="number" 
+                            placeholder="Enter Serving Size"
+                            name="servsize" 
+                            className="input-field" 
+                            autoComplete="off"
+                            value={servsize}
+                            onChange={handleChange}
+                            required/>
+                    </div>
+                    <div className="input-wrap">
+                        <span className="details">Calories</span>
+                        <input
+                            type="number" 
+                            placeholder="Enter Calories"
+                            name="cal"  
+                            className="input-field" 
+                            autoComplete="off"
+                            value={cal}
+                            onChange={handleChange}
+                            required/>
+                    </div>
+                    <div className="input-wrap">
+                        <span className="details">Protein(g)</span>
+                        <input
+                            type="number" 
+                            placeholder="Enter Protein(g)"
+                            name="protein" 
+                            className="input-field" 
+                            autoComplete="off"
+                            value={protein}
+                            onChange={handleChange}
+                            required/>
+                    </div>
+                    <div className="input-wrap">
+                        <span className="details">Fat(g)</span>
+                        <input
+                            type="number" 
+                            placeholder="Enter Fat(g) "
+                            name="fat" 
+                            className="input-field" 
+                            autoComplete="off"
+                            value={fat}
+                            onChange={handleChange}
+                            required/>
+                    </div>
+                    <div className="input-wrap">
+                        <span className="details">Carbs(g)</span>
+                        <input
+                            type="number"
+                            placeholder="Enter Carbs (g) " 
+                            name="carbs" 
+                            className="input-field" 
+                            autoComplete="off"
+                            value={carbs}
+                            onChange={handleChange}
+                            required/>
+                    </div>
+                    <div className="button">
+                        <input type="submit" value="Submit Nutrition"className="sign-btn" />
+                    </div>
+                </div>
             </form>
+        </div>
     );
 }

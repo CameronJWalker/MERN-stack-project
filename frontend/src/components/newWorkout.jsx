@@ -34,57 +34,113 @@ export default function NewWorkout() {
 
     const {workoutname, cOs, sets, reps, weight, duration, burned} = inputs
     return (
-            <form onSubmit={handleSubmit} className="newWorkout">
-                <label class ="workoutName">Enter your Workout Name
-                    <input 
-                        type="text" 
-                        name="workoutname" 
-                        value={workoutname} 
-                        onChange={handleChange}/>
-                </label>
-                <label class = "cOs"> Cardio or Strength
-                    <input 
-                        type="text" 
+    <div className="container">
+      <div className="title">New Workout
+        <h6> Enter Workout Details Below </h6>
+        <div className="logo">
+          <img src="2logo.png" alt="TheWorkoutApp" className='one'/>
+        </div>
+        </div>
+        <form action="#" onSubmit={handleSubmit}>
+          <div className="topic-details">
+            <div className="input-wrap">
+              <span className= "details">Workout Name</span>
+                <input
+                                type="text"
+                                placeholder=" Enter Workout Name"
+                                name="workoutname"   
+                                className="input-field" 
+                                autoComplete="off"
+                                value={workoutname}
+                                onChange={handleChange}
+                                required
+                />
+            </div>
+
+            <div className="input-wrap">
+              <span className="details">Cardio or Strength</span>
+                  <input
+                       type="text" 
+                       placeholder="Cardio or Stregnth"
                         name="cOs" 
-                        value={cOs} 
-                        onChange={handleChange}/>
-                </label>
-                <label class = "numberOfSets"># of Sets
-                    <input 
-                        type="number" 
+                        value={cOs}
+                        className="input-field" 
+                        autoComplete="off"
+                        onChange={handleChange}
+                        required
+                  />
+            </div>
+
+            <div className="input-wrap">
+              <span className="details"># of Sets</span>
+                  <input
+                       type="number" 
+                       placeholder="Enter # of Sets"
                         name="sets" 
-                        value={sets} 
-                        onChange={handleChange}/>
-                </label>
-                <label class = "numberOfReps"># of Reps
-                    <input 
-                        type="number" 
+                        className="input-field" 
+                        autoComplete="off"
+                        value={sets}
+                        onChange={handleChange}
+                        required
+                  />
+            </div>
+
+            <div className="input-wrap">
+              <span className="details"># of Reps</span>
+                  <input
+                       type="number" 
+                       placeholder="Enter # of Reps"
                         name="reps" 
-                        value={reps} 
-                        onChange={handleChange}/>
-                </label>
-                <label class = "weight"> Weight
-                    <input 
-                        type="number" 
-                        name="weight" 
-                        value={weight} 
-                        onChange={handleChange}/>
-                </label>
-                <label class = "workoutDuration"> Workout Duration
-                    <input 
-                        type="number" 
-                        name="duration" 
-                        value={duration} 
-                        onChange={handleChange}/>
-                </label>
-                <label class = "caloriesBurned"> Est. Calories Burned
-                    <input 
-                        type="number" 
-                        name="burned" 
-                        value={burned} 
-                        onChange={handleChange}/>
-                </label>
-                <button>Submit</button>
-            </form>
-    );
+                        className="input-field" 
+                        autoComplete="off"
+                        value={reps}
+                        onChange={handleChange}
+                        required
+                  />
+            </div>
+            <div className="input-wrap">
+              <span className="details">Weight</span>
+                  <input
+                      type="text" 
+                      placeholder="Enter Weight"
+                      name="weight" 
+                      className="input-field" 
+                      autoComplete="off"
+                      value={weight}
+                      onChange={handleChange}
+                      required
+                  />
+            </div>
+            <div className="input-wrap">
+              <span className="details">Workout Duration</span>
+                  <input
+                      type="number" 
+                      placeholder="Enter Duration "
+                      name="duration" 
+                      value={duration} 
+                      className="input-field" 
+                      autoComplete="off"
+                      onChange={handleChange}
+                      required
+                  />
+            </div>
+
+            <div className="input-wrap">
+              <span className="details">Est. Calories Burned </span>
+                    <input
+                        type="number"
+                        placeholder="Enter (e+calories)" 
+                        name="burned"
+                        value={burned}
+                        onChange={handleChange}
+                        required
+                    />
+              </div>
+              <div className="button">
+                <input type="submit" value="Submit New Workout"className="sign-btn" />
+              </div>
+            </div>
+      </form>
+    </div>
+    )
 }

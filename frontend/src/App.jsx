@@ -14,10 +14,8 @@ export default function App() {
   
        <div className="App">
             <nav className = 'navbar'>
-              Workout App
-              <div className = "HomeButton">
-              <a href ='/'><button>Home</button></a>
-              </div>
+              <p>Workout App</p>
+              <a href ='/' className="HomeButton">Home</a>
             </nav>
         </div>
       <Routes>
