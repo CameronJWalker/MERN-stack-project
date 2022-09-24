@@ -2,10 +2,14 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+require('dotenv').config();
 const cors = require("cors");
+const NewAuthRouter = require('../Routes/authRoute')
 const PRLogRouter = require('../Routes/PRLogPosts');
 const NewWorkoutRouter = require('../Routes/newWorkoutPosts');
 const NutritionRouter = require('../Routes/nutritionPosts');
+const { expressjwt: jwt } = require('express-jwt');
+
 
 // Middleware
 app.use(express.json());
@@ -25,6 +29,7 @@ async function main(){
 };
 
 // Route
+app.use('/auth', NewAuthRouter)
 app.use('/prlog', PRLogRouter)
 app.use('/newworkout', NewWorkoutRouter)
 app.use('/nutrition', NutritionRouter)
@@ -37,4 +42,5 @@ app.use('/nutrition', NutritionRouter)
 app.listen(3001, () => {
     console.log("The App is running at port 3001")
 });
+
 

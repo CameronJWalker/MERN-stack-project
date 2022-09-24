@@ -15,6 +15,7 @@ export default function App() {
        <div className="App">
             <nav className = 'navbar'>
               Workout App
+              <a href = '/signin'><button>Log In</button></a>
             </nav>
         </div>
       <Routes>
